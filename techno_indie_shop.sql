@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2024 at 04:20 AM
+-- Generation Time: Mar 11, 2024 at 04:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `techno_indie_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `identitas`
+--
+
+CREATE TABLE `identitas` (
+  `id` int(11) NOT NULL,
+  `nama_lengkap` text NOT NULL,
+  `alamat_lengkap` text NOT NULL,
+  `catatan` text NOT NULL,
+  `nomor_hp` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invoice`
+--
+
+CREATE TABLE `invoice` (
+  `id` int(11) NOT NULL,
+  `in_voice` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -75,6 +100,18 @@ CREATE TABLE `testimoni` (
 --
 
 --
+-- Indexes for table `identitas`
+--
+ALTER TABLE `identitas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jasa`
 --
 ALTER TABLE `jasa`
@@ -101,6 +138,18 @@ ALTER TABLE `testimoni`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `identitas`
+--
+ALTER TABLE `identitas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `jasa`
